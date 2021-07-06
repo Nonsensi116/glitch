@@ -59,6 +59,7 @@ function rotate_with_v1_reach_x_axis (v1, v2) {
 
 // v1を基準に半時計周りの角度を返す (0~360)
 // v1がx軸に重なる状態でv2のy座標が正なら求める角度は0~180の範囲にある
+// minを取っているのはacosが1より大きい値を取るとNaNを返してしまうから
 function calc_angle_from_2dvecs (v1, v2) {
   tmp = Math.acos(Math.min(dot2d(v1,v2)/length_of_2dvec(v1)/length_of_2dvec(v2),1))*180/Math.PI;
   
